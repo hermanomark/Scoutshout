@@ -1,0 +1,6 @@
+<%= @user.email %>
+
+
+<% @images.each do |image| %>
+  <%= image_tag image.picture.url, size: "500x500" %>
+<% end %>
