@@ -29,7 +29,7 @@ class ImagesController < ApplicationController
     
     respond_to do |format|
       if @image.save
-        format.html { redirect_to @image, notice: 'Image was successfully created.' }
+        format.html { redirect_to setcard_path(current_user), notice: 'Your card was successfully added!' }
         format.json { render :show, status: :created, location: @image }
       else
         format.html { render :new }
@@ -57,7 +57,7 @@ class ImagesController < ApplicationController
   def destroy
     @image.destroy
     respond_to do |format|
-      format.html { redirect_to images_url, notice: 'Image was successfully destroyed.' }
+      format.html { redirect_to setcard_path(current_user), notice: 'Card was deleted' }
       format.json { head :no_content }
     end
   end
@@ -70,6 +70,6 @@ class ImagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def image_params
-      params.require(:image).permit(:name, :picture, :user_id)
+      params.require(:image).permit(:picture, :user_id)
     end
 end

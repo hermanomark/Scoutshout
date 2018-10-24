@@ -69,3 +69,12 @@ html, body {
 .btn-primary:visited, .btn-danger:visited {
   color: #fff;
 }
+
+.my-setcard-images .card {
+  display: inline-block;
+  margin: 3px;
+}
+
+.my-setcard-images img {
+  border-radius: 3px;
+}

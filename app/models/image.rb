@@ -4,7 +4,7 @@ class Image < ApplicationRecord
 
   # under mount uploader
   validate :picture_size
-
+  validates :picture, presence: true
   private
 
   def picture_size

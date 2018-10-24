@@ -10,13 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_22_143401) do
+ActiveRecord::Schema.define(version: 2018_10_24_114705) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "images", force: :cascade do |t|
-    t.string "name"
     t.string "picture"
     t.bigint "user_id"
     t.datetime "created_at", null: false
@@ -36,6 +35,17 @@ ActiveRecord::Schema.define(version: 2018_10_22_143401) do
     t.string "unconfirmed_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.integer "age"
+    t.string "nationality"
+    t.integer "height"
+    t.integer "bust"
+    t.integer "waist"
+    t.integer "hips"
+    t.string "eye_color"
+    t.string "hair_color"
+    t.integer "shoe_size"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
