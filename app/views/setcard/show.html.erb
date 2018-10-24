@@ -2,6 +2,12 @@
   <h1>SetCard</h1>
   <div class="row">
     <div class="col-sm-3">
+      <div class="my-social-media text-center">
+        <a href="<%= @user.facebook %>" target="_blank"><i class="fa fa-facebook"></i></a>
+        <a href="<%= @user.instagram %>" target="_blank"><i class="fa fa-instagram"></i></a>
+        <a href="<%= @user.linkedin %>" target="_blank"><i class="fa fa-linkedin"></i></a>
+        <a href="<%= @user.twitter %>" target="_blank"><i class="fa fa-twitter"></i></a>
+      </div>
       <ul class="list-group">
         <li class="list-group-item"><strong>MODEL INFORMATION</strong> <%= link_to ('<i class="fa fa-pencil"></i>').html_safe, edit_user_registration_path, title: 'Edit Profile' %></li>
         <li class="list-group-item"><strong>Name:</strong> <%= @user.full_name %></li>

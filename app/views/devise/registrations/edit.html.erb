@@ -50,6 +50,22 @@
         <%= f.number_field :shoe_size, autofocus: true, class: 'form-control' %>
       </div>
       <div class="form-group">
+        <%= f.label "Facebook (link)" %>
+        <%= f.text_field :facebook, autofocus: true, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label "Instagram (link)" %>
+        <%= f.text_field :instagram, autofocus: true, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label "Linkedin (link)" %>
+        <%= f.text_field :linkedin, autofocus: true, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label "Twitter (link)" %>
+        <%= f.text_field :twitter, autofocus: true, class: 'form-control' %>
+      </div>
+      <div class="form-group">
         <%= f.label :password %> <i>(<%= t('.leave_blank_if_you_don_t_want_to_change_it', default: "leave blank if you don't want to change it") %>)</i>
         <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
       </div>

@@ -70,6 +70,17 @@ html, body {
   color: #fff;
 }
 
+.my-social-media {
+  font-size: 20px;
+  word-spacing: 12px;
+  margin: 15px 0 15px 0;
+}
+
+.my-social-media a:hover {
+  background-color: transparent;
+  color: darkgray;
+}
+
 .my-setcard-images .card {
   display: inline-block;
   margin: 3px;
