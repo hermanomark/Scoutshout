@@ -2,6 +2,16 @@
   <h1>SetCard</h1>
   <div class="row">
     <div class="col-sm-3">
+      <%= link_to ('<i class="fa fa-pencil"></i>').html_safe, edit_user_registration_path, title: 'Edit Profile' %>
+      <% if @user.picture? %>
+        <div class="my-profile-picture center-block">
+          <%= image_tag(@user.picture.url, size: "180x180", class: "center-block") %>
+        </div>
+      <% else %>
+        <div class="my-profile-placeholder center-block">
+          
+        </div>
+      <% end %>
       <div class="my-social-media text-center">
         <a href="<%= @user.facebook %>" target="_blank"><i class="fa fa-facebook"></i></a>
         <a href="<%= @user.instagram %>" target="_blank"><i class="fa fa-instagram"></i></a>
@@ -9,17 +19,17 @@
         <a href="<%= @user.twitter %>" target="_blank"><i class="fa fa-twitter"></i></a>
       </div>
       <ul class="list-group">
-        <li class="list-group-item"><strong>MODEL INFORMATION</strong> <%= link_to ('<i class="fa fa-pencil"></i>').html_safe, edit_user_registration_path, title: 'Edit Profile' %></li>
+        <li class="list-group-item"><strong>MODEL INFORMATION</strong></li>
         <li class="list-group-item"><strong>Name:</strong> <%= @user.full_name %></li>
         <li class="list-group-item"><strong>Age:</strong> <%= @user.age %></li>
         <li class="list-group-item"><strong>Nationality:</strong> <%= @user.nationality %></li>
-        <li class="list-group-item"><strong>Height:</strong> <%= @user.height %></li>
-        <li class="list-group-item"><strong>Bust:</strong> <%= @user.bust %></li>
-        <li class="list-group-item"><strong>Waist:</strong> <%= @user.waist %></li>
+        <li class="list-group-item"><strong>Height(cm):</strong> <%= @user.height %></li>
+        <li class="list-group-item"><strong>Bust(cm):</strong> <%= @user.bust %></li>
+        <li class="list-group-item"><strong>Waist(cm):</strong> <%= @user.waist %></li>
         <li class="list-group-item"><strong>Hips:</strong> <%= @user.hips %></li>
         <li class="list-group-item"><strong>Eye Color:</strong> <%= @user.eye_color %></li>
         <li class="list-group-item"><strong>Hair Color:</strong> <%= @user.hair_color %></li>
-        <li class="list-group-item"><strong>Shoe Size:</strong> <%= @user.shoe_size %></li>
+        <li class="list-group-item"><strong>Shoe Size(cm):</strong> <%= @user.shoe_size %></li>
       </ul>
     </div>
     <div class="my-setcard-images col-sm-9">

@@ -29,8 +29,8 @@ html, body {
 }
 
 .nav.navbar-right {
-  padding-bottom: 10px;
-  padding-top: 5px;
+  padding-bottom: 3px;
+  padding-top: 3px;
 }
 
 .nav.navbar-nav {
@@ -70,6 +70,26 @@ html, body {
   color: #fff;
 }
 
+.my-profile-picture {
+  border-radius: 50%;
+  border: 1px solid darkgray;
+  height: 180px;
+  width: 180px;
+}
+
+.my-profile-picture img {
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+}
+
+.my-profile-placeholder {
+  border-radius: 50%;
+  border: 1px solid darkgray;
+  height: 180px;
+  width: 180px;
+}
+
 .my-social-media {
   font-size: 20px;
   word-spacing: 12px;
@@ -88,4 +108,8 @@ html, body {
 
 .my-setcard-images img {
   border-radius: 3px;
+}
+
+footer {
+  margin-top: 120px;
 }
