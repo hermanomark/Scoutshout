@@ -2,7 +2,9 @@
   <h1>SetCard</h1>
   <div class="row">
     <div class="col-sm-3">
-      <%= link_to ('<i class="fa fa-pencil"></i>').html_safe, edit_user_registration_path, title: 'Edit Profile' %>
+      <% if current_user == @user %>
+        <%= link_to ('<i class="fa fa-pencil"></i>').html_safe, edit_user_registration_path, title: 'Edit Profile' %>
+      <% end %>
       <% if @user.picture? %>
         <div class="my-profile-picture center-block">
           <%= image_tag(@user.picture.url, size: "180x180", class: "center-block") %>
@@ -21,6 +23,7 @@
       <ul class="list-group">
         <li class="list-group-item"><strong>MODEL INFORMATION</strong></li>
         <li class="list-group-item"><strong>Name:</strong> <%= @user.full_name %></li>
+        <li class="list-group-item"><strong>Email:</strong> <%= @user.email %></li>
         <li class="list-group-item"><strong>Age:</strong> <%= @user.age %></li>
         <li class="list-group-item"><strong>Nationality:</strong> <%= @user.nationality %></li>
         <li class="list-group-item"><strong>Height(cm):</strong> <%= @user.height %></li>
@@ -34,26 +37,34 @@
     </div>
     <div class="my-setcard-images col-sm-9">
       <div class="row">
-        <%= link_to "Add Card",
+        <% if current_user == @user %>
+          <%= link_to "Add Card",
             new_image_path,
             :class => 'btn btn-primary btn-sm' %>
+        <% end %>
       </div>
       <div class="row">
         <% if @images.size > 0 %>
             <% @images.each do |image| %>
-                <div class="card">
-                  <div class="card-body">
-                     <%= link_to ('<i class="fa fa-times"></i>').html_safe,
+              <div class="card">
+                <div class="card-body">
+                  <% if current_user == @user %>
+                    <%= link_to ('<i class="fa fa-times"></i>').html_safe,
                       image_path(image),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'pull-right' %>
-                  </div>
-                  <%= image_tag image.picture.url, size: "260x260", class: "card-img-top" %>
+                  <% end %>
                 </div>
+                <%= image_tag image.picture.url, size: "260x260", class: "card-img-top" %>
+              </div>
           <% end %>
         <% else %>
-            <h1 class="text-center">You don't have cards yet! Please add some so clients would notice you!</h1>
+            <% if current_user == @user %>
+              <h1 class="text-center">You don't have cards yet! Please add some so clients would notice you!</h1>
+            <% else %>
+              <h1 class="text-center">This user hasn't added any cards yet!</h1>
+            <% end %>
         <% end %>
       </div>
     </div>

@@ -14,10 +14,12 @@
         <% if user_signed_in? && current_user %>
           <li><%= link_to "Setcard", setcard_path(current_user)  %></li>
           <li><%= link_to "Experience", "/#" %></li>
+          <li><%= link_to "<i class='fa fa-search'></i> &nbsp; Find Model".html_safe, find_model_path %></li>
         <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? && current_user %>
+          <li><%= link_to current_user.email, setcard_path(current_user) %></li>
           <li><%= link_to ('<i class="fa fa-calendar"></i>').html_safe,
             "/#", title: 'Calendar' %></li>
           <li><%= link_to ('<i class="fa fa-bell"></i>').html_safe,

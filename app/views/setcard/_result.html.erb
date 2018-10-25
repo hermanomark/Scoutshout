@@ -1,0 +1,31 @@
+<% if params[:action] == 'search' %>
+  <div class="flash">
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %> alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong><%= value %></strong> 
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+<% if @users %>
+  <!-- fix for searching no matches found, div well is still displaying  -->
+  <% if @users.size > 0 %>
+    <div class="row my-search-results ">
+      <% @users.each do |user| %>
+        <div class="card" style="width: 18rem;">
+          <% if user.picture? %>
+            <%= image_tag(user.picture.url, size: "180x180", class: "card-img-top") %>
+          <% else %>
+            <img src="https://via.placeholder.com/180" />
+          <% end %>
+          <div class="card-body">
+            <h5 class="card-title"><strong>Name:</strong><%= user.full_name %></h5>
+            <%= link_to "View Profile", setcard_path(user), class: "btn btn-primary" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>
