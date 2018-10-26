@@ -1,2 +1,9 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<div class="jumbotron">
+  <h1>ScoutShout</h1>
+  <% if user_signed_in? %>
+    <h2>Where real modeling happens</h2>
+  <% end %>
+  <% if !user_signed_in? %>
+    <%= link_to "Get Started", new_user_registration_path, class: "btn btn-info btn-lg btn-xlarge" %>
+  <% end %>
+</div>

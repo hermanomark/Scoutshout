@@ -134,3 +134,24 @@ footer {
   padding: 5px;
 }
 
+.jumbotron {
+  background-image: asset-url('model.jpg');
+  background-size: cover;
+  height: 140vh;
+}
+
+.jumbotron h1 {
+  color: white;
+  margin-bottom: 30px;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+.jumbotron h2 {
+  color: white;
+  margin-bottom: 30px;
+  letter-spacing: -1px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
